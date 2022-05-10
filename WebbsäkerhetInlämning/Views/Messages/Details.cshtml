@@ -1,0 +1,40 @@
+﻿@model WebbsäkerhetInlämning.Models.Message
+
+@{
+    ViewData["Title"] = "Details";
+    string message = Model.MessageContent;
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Message</h4>
+    <hr />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MessageContent)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Sender)
+                </td>
+                <td>
+                    @Html.Raw(message)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
